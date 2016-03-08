@@ -9,14 +9,14 @@ $(document).ready(
 	function(){
 		$("#update").on("click",
 			function(){
-				location.href="OmokServlet?menu=update";
+				location.href="update.omok";
 			}		
 		);
 		$("#delete").on("click",
 			function(){
 				var chk = confirm("정말로 탈퇴하시겠습니까?");
 				if(chk == 1)
-					location.href="OmokServlet?menu=delete";
+					location.href="delete.omok";
 			}		
 		);	
 		
@@ -27,7 +27,7 @@ $(document).ready(
 </head>
 <body>
 
-<form class="contact_form" action="OmokServlet" method="post">
+<form class="contact_form">
 	<ul>
         <li>
              <h2>회원정보</h2>

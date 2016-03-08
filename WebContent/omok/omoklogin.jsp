@@ -8,12 +8,11 @@
 <head>
 </head>
 <body>
-<form action="OmokServlet" method="post" id="slick-login">
+<form action="loginsuccess.omok" method="post" id="slick-login">
 <h2>로그인</h2>
 <input type="text" name="id" class="placeholder" placeholder="아이디">
 <input type="password" name="pw" class="placeholder" placeholder="비밀번호">
 <input type="submit" value="로그인">
-<input type="hidden" name="menu" value="loginsuccess" />
 </form>
 </body>
 </html>

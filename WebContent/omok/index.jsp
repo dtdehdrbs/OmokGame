@@ -15,7 +15,7 @@
 <script type="text/javascript" src="omok/js/jquery-1.11.1.js"></script>
 <script src="omok/js/jquery-1.11.1.js"></script>
 </head>
-<body>
+<body> 
 <jsp:include page="header.jsp"></jsp:include>
 <div id="wrapper">
 	<div align="center">

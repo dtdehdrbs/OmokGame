@@ -7,7 +7,7 @@
 <title></title>
 </head>
 <body>
-<form class="contact_form" action="OmokServlet" method="post">
+<form class="contact_form" action="joinsuccess.omok" method="post">
 	<ul>
         <li>
              <h2>회원가입</h2>
@@ -47,7 +47,6 @@
         	<button class="submit" type="submit">회원가입</button>
         </li>
     </ul>
-	<input type="hidden" name="menu" value="joinsuccess" />
 </form>
 </body>
 </html>

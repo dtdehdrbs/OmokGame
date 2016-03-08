@@ -11,5 +11,5 @@
 	<p>© 2016 TeamProject Inc. All rights reserved.</p>
 </div>
 <!-- end #footer -->
-</body>
+</body> 
 </html>

@@ -7,7 +7,7 @@
 <title></title>
 </head>
 <body>
-<form class="contact_form" action="OmokServlet" method="post">
+<form class="contact_form" action="updatesuccess.omok" method="post">
 	<ul>
         <li>
              <h2>회원정보수정</h2>
@@ -41,7 +41,6 @@
         	<button class="submit" type="submit">정보 수정</button>
         </li>
     </ul>
-	<input type="hidden" name="menu" value="updatesuccess" />
 </form>
 
 </body>

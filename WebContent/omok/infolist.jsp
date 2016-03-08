@@ -17,7 +17,7 @@
 	<c:forEach var="info" items="${oinfolist}">
 		<tr><td><label>${info.id}</label></td>
 			<td>${info.grade}</td>
-			<td><label><a href="OmokServlet?menu=infodetail&id=${info.id}">${info.name}</a></label></td><td><label>${info.email}</label></td><td><label>${info.indate}</label></td></tr>	
+			<td><label><a href="infodetail.omok&id=${info.id}">${info.name}</a></label></td><td><label>${info.email}</label></td><td><label>${info.indate}</label></td></tr>	
 	</c:forEach>
    	</table>
 </ul>

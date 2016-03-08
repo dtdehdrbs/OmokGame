@@ -15,21 +15,22 @@
 		<div id="menu" class="container">
 			<ul>
 				<c:if test="${sessionGrade=='관리자'}">
-					<li><a href="OmokServlet?menu=infosearch">회원관리</a></li>
+					<li><a href="infosearch.omok">회원관리</a></li>
 				</c:if>
-				<li class="current_page_item1"><a href="OmokServlet">홈페이지</a></li>
 				<c:if test="${empty sessionID }">				
-					<li><a href="OmokServlet?menu=login">로그인</a></li>
-					<li><a href="OmokServlet?menu=join">회원가입</a></li>
+					<li class="current_page_item1"><a href="begin2.omok">홈페이지</a></li>
+					<li><a href="login.omok">로그인</a></li>
+					<li><a href="join.omok">회원가입</a></li>
 				</c:if>
 				<c:if test="${!empty sessionID }">
-					<li><a href="OmokServlet?menu=mypage">마이페이지</a></li>				
+					<li class="current_page_item1"><a href="begin.omok">홈페이지</a></li>
+					<li><a href="mypage.omok">마이페이지</a></li>				
 					<li><a href="BoardServlet?menu=notice">공지사항</a></li>
 					<li><a href="BoardServlet?menu=free">자유게시판</a></li>
 					<li><a href="BoardServlet?menu=qna">Q&A</a></li>
 					<li><a href="PlayServlet?menu=list">게임시작</a></li>
-					<li><a href="OmokServlet?menu=rank">랭킹</a></li>
-					<li><a href="OmokServlet?menu=logout">로그아웃</a></li>				
+					<li><a href="rank.omok">랭킹</a></li>
+					<li><a href="logout.omok">로그아웃</a></li>				
 				</c:if>
 			</ul>
 		</div>

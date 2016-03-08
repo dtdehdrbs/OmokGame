@@ -7,7 +7,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form class="contact_form" action="OmokServlet" method="post">
+<form class="contact_form">
 <table>
 	<ul>
         <li>

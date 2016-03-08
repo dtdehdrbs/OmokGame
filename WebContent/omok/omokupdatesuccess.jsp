@@ -4,15 +4,15 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-<title>Insert title here</title>
+<title></title>
 <c:if test="${sessionGrade=='관리자'}">
 	<script>
-		location.href="OmokServlet?menu=infodetail&id=${id}"
+		location.href="infodetail.omok&id=${id}"
 	</script>
 </c:if>
 <c:if test="${sessionGrade != '관리자' }">
 	<script>
-		location.href="OmokServlet?menu=mypage";
+		location.href="mypage.omok";
 	</script>
 </c:if>
 </head>

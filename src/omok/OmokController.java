@@ -3,6 +3,7 @@ package omok;
 import java.util.ArrayList;
 
 import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,9 +11,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.ModelAndView;
-import board.OBoardDAO;
-import board.OBoardVO;
 
 
 @Controller
@@ -21,7 +21,7 @@ public class OmokController {
 	@Autowired
 	OBoardDAO boardDAO;
 	@Autowired
-	OBoardDAO boardVO;
+	OBoardVO boardVO;
 	@Autowired
 	OInfoDAO infoDAO;
 	@Autowired
@@ -30,9 +30,9 @@ public class OmokController {
 	/********************** 세션이 있을때 동작 *****************************/
 	
 	@RequestMapping(value="logout.omok",method=RequestMethod.GET)
-	public ModelAndView logout(HttpSession session){
+	public ModelAndView logout(SessionStatus session){
 		ModelAndView mav = new ModelAndView();
-		session.invalidate();
+		session.setComplete();
 		ArrayList<OBoardVO> freeBoard = boardDAO.getFreeList();
 		ArrayList<OBoardVO> noticeBoard = boardDAO.getNoticeList();
 		ArrayList<ORankVO> rankList = infoDAO.selectRank();
@@ -40,7 +40,7 @@ public class OmokController {
 		mav.addObject("free", freeBoard);
 		mav.addObject("notice", noticeBoard);
 		mav.addObject("rank", rankList);	
-		mav.addObject("page", "home.jsp");
+		mav.addObject("page", "omoklogoutsuccess.jsp");
 		mav.setViewName("index");
 		return mav;			
 	}
@@ -49,16 +49,16 @@ public class OmokController {
 		ModelAndView mav = new ModelAndView();
 		ArrayList<ORankVO> list = infoDAO.selectRank();
 		mav.addObject("list", list);
-		mav.addObject("page", "home.jsp");
+		mav.addObject("page", "omokrank.jsp");
 		mav.setViewName("index");
 		return mav;			
 	}
 	@RequestMapping(value="mypage.omok",method=RequestMethod.GET)
-	public ModelAndView mypage(@ModelAttribute String sessionID){
+	public ModelAndView mypage(@ModelAttribute("sessionID") String sessionID){
 		ModelAndView mav = new ModelAndView();
 		infoVO = infoDAO.selectInfo(sessionID);
 		mav.addObject("vo",infoVO);
-		mav.addObject("page", "home.jsp");
+		mav.addObject("page", "mypage.jsp");
 		mav.setViewName("index");
 		return mav;			
 	}
@@ -67,9 +67,9 @@ public class OmokController {
 	public ModelAndView update(String id, @ModelAttribute("sessionID") String sessionID,@ModelAttribute("sessionGrade") String sessionGrade){
 		ModelAndView mav = new ModelAndView();
 		if(sessionGrade.equals("관리자")){
-			infoVO = infoDAO.selectInfo(sessionID);
-		}else{
 			infoVO = infoDAO.selectInfo(id);
+		}else{
+			infoVO = infoDAO.selectInfo(sessionID);
 		}
 		mav.addObject("vo", infoVO);
 		mav.addObject("page", "omokupdateform.jsp");
@@ -78,7 +78,7 @@ public class OmokController {
 	}
 	
 	@RequestMapping(value="delete.omok",method=RequestMethod.GET)
-	public ModelAndView delete(String id, HttpSession session, @ModelAttribute("sessionID") String sessionID,@ModelAttribute("sessionGrade") String sessionGrade){
+	public ModelAndView delete(String id, SessionStatus session, @ModelAttribute("sessionID") String sessionID,@ModelAttribute("sessionGrade") String sessionGrade){
 		ModelAndView mav = new ModelAndView();
 		ArrayList<OBoardVO> freeBoard = boardDAO.getFreeList();
 		ArrayList<OBoardVO> noticeBoard = boardDAO.getNoticeList();
@@ -89,10 +89,10 @@ public class OmokController {
 		mav.addObject("rank", rankList);
 		
 		if(sessionGrade.equals("관리자")){
-			infoDAO.deleteInfo(sessionID);
-		}else{
 			infoDAO.deleteInfo(id);
-			session.invalidate();
+		}else{
+			infoDAO.deleteInfo(sessionID);
+			session.setComplete();
 		}
 		mav.addObject("page", "home.jsp");
 		mav.setViewName("index");
@@ -147,7 +147,6 @@ public class OmokController {
 	@RequestMapping(value="begin.omok",method=RequestMethod.GET)
 	public ModelAndView begin(String id, @ModelAttribute("sessionID") String sessionID){
 		ModelAndView mav = new ModelAndView();
-		
 		infoVO = infoDAO.selectInfo(sessionID);
 		ArrayList<OBoardVO> freeBoard = boardDAO.getFreeList();
 		ArrayList<OBoardVO> noticeBoard = boardDAO.getNoticeList();
@@ -207,7 +206,7 @@ public class OmokController {
 	
 	/********************** 세션이 있을때 동작 ****************************POST*/
 	@RequestMapping(value="updatesuccess.omok",method=RequestMethod.POST)
-	public ModelAndView updatesuccess(OInfoVO vo , @ModelAttribute String sessionID, @ModelAttribute String sessionGrade){
+	public ModelAndView updatesuccess(OInfoVO vo , @ModelAttribute("sessionID") String sessionID, @ModelAttribute("sessionGrade") String sessionGrade){
 		ModelAndView mav = new ModelAndView();
 		
 		if(sessionID.equals("관리자")){

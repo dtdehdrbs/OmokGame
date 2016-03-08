@@ -8,8 +8,7 @@
 </head>
 <body>
 
-<form class="contact_form" action="OmokServlet">
-<input type="hidden" name="menu" value="infolist"/>
+<form class="contact_form" action="infolist.omok">
 <ul class="list-style2">
 	<li><h2>회원정보</h2></li>
 	<li>
