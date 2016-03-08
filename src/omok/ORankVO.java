@@ -1,5 +1,8 @@
 package omok;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class ORankVO {
 	private String r;
 	private String userid;

@@ -1,5 +1,8 @@
 package board;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class OBoardVO {
 	private int boardseq;
 	private String boardtitle;

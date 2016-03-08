@@ -4,11 +4,14 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class ORankDAO {
 	String jdbcDriver="oracle.jdbc.driver.OracleDriver";
-//	String dbConnect ="jdbc:oracle:thin:@localhost:1521:xe";
-	String dbConnect ="jdbc:oracle:thin:@10.25.6.156:1521:xe";
+	String dbConnect ="jdbc:oracle:thin:@localhost:1521:xe";
+//	String dbConnect ="jdbc:oracle:thin:@10.25.6.156:1521:xe";
 	
 	public int winScore(String id){
 		int result = -1;

@@ -1,18 +1,21 @@
 package board;
 
 import java.sql.Connection;
+
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import javax.websocket.Session;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class OBoardDAO {
 	String jdbcDriver="oracle.jdbc.driver.OracleDriver";
-	String dbConnect ="jdbc:oracle:thin:@10.25.6.156:1521:xe";
-//	String dbConnect ="jdbc:oracle:thin:@localhost:1521:xe";
+//	String dbConnect ="jdbc:oracle:thin:@10.25.6.156:1521:xe";
+	String dbConnect ="jdbc:oracle:thin:@localhost:1521:xe";
 	public int getTotalCount(String boardtype){
 		int result = 0;
 		Connection con = null;

@@ -1,5 +1,8 @@
 package play;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class RoomVO {
 	private String id;
 	private int prseq;

@@ -1,5 +1,8 @@
 package omok;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class OInfoVO {
 	private String id;
 	private String pw;

@@ -1,5 +1,8 @@
 package reply;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class OReplyVO {
 	private int seq;
 	private String title;

@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public class PlayDAO {
 	String jdbcDriver="oracle.jdbc.driver.OracleDriver";
-	String dbConnect ="jdbc:oracle:thin:@10.25.6.156:1521:xe";
-//	String dbConnect="jdbc:oracle:thin:@localhost:1521:xe";
+//	String dbConnect ="jdbc:oracle:thin:@10.25.6.156:1521:xe";
+	String dbConnect="jdbc:oracle:thin:@localhost:1521:xe";
 	ArrayList<PlayVO> selectPlay(String id){
 		ArrayList<PlayVO> list = new ArrayList<PlayVO>();
 		Connection con = null;

@@ -7,12 +7,14 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-import board.OBoardVO;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class OInfoDAO {
 	String jdbcDriver="oracle.jdbc.driver.OracleDriver";
-//	String dbConnect ="jdbc:oracle:thin:@localhost:1521:xe";
-	String dbConnect ="jdbc:oracle:thin:@10.25.6.156:1521:xe";
+	String dbConnect ="jdbc:oracle:thin:@localhost:1521:xe";
+//	String dbConnect ="jdbc:oracle:thin:@10.25.6.156:1521:xe";
 	
 	
 	//회원가입DAO
