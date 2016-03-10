@@ -61,11 +61,11 @@ public class OReplyDAO {
 			con = DriverManager.getConnection(dbConnect, "scott", "scott");
 			String query = "insert into oreply values (?,?,?,?,0,?,sysdate)";
 			PreparedStatement st = con.prepareStatement(query);
-			st.setInt(1, vo.getSeq());//seq
-			st.setString(2, vo.getTitle());//title
-			st.setString(3, vo.getContents());//contents
-			st.setString(4, vo.getWriter());//writer
-			st.setString(5, vo.getType());//type
+			st.setInt(1, vo.getReplyseq());//seq
+			st.setString(2, vo.getReplytitle());//title
+			st.setString(3, vo.getReplycontents());//contents
+			st.setString(4, vo.getReplywriter());//writer
+			st.setString(5, vo.getReplytype());//type
 			result = st.executeUpdate();
 			
 		} catch (ClassNotFoundException e) {

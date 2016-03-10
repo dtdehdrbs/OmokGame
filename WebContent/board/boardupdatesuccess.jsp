@@ -13,11 +13,11 @@
 <h2>제목 : ${vo.boardtitle }</h2>
 <h2>작성자 : ${sessionID }</h2>
 <h2>내용 : ${vo.boardcontents }</h2>
-<a href="BoardServlet?menu=${vo.boardtype }">메인메뉴로 이동</a>하시겠습니까?
+<a href="${vo.boardtype}.board">메인메뉴로 이동</a>하시겠습니까?
 </c:if>
 <c:if test="${result==0 }">
 <h1>글 수정을 실패하였습니다.</h1>
-<a href="BoardServlet?menu=${vo.boardtype }">메인메뉴로 이동</a>하시겠습니까?
+<a href="${vo.boardtype}.board">메인메뉴로 이동</a>하시겠습니까?
 </c:if>
 </body>
 </html>

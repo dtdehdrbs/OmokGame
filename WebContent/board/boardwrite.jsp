@@ -9,8 +9,7 @@
 <body>
 <h1>글쓰기</h1>
 <h2>
-<form class="contact_form" action="BoardServlet">
-<input type="hidden" name="menu" value="writesuccess"/>
+<form class="contact_form" action="write.board" method="post">
 <input type="hidden" name="boardtype" value="${boardtype}"/>
 제목  :<input name="boardtitle" type=text><br>
 작성자:${sessionID}<br>

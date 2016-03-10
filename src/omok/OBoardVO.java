@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class OBoardVO {
-	private int boardseq;
+	private int seq;
 	private String boardtitle;
 	private String boardwriter;
 	private String boardcontents;
@@ -12,9 +12,9 @@ public class OBoardVO {
 	private int boardviewcount;
 	private String boardtype;
 	public OBoardVO(){};
-	public OBoardVO(int boardseq, String boardtitle, String boardwriter, String boardcontents, String boardtime, int boardviewcount, String boardtype){
+	public OBoardVO(int seq, String boardtitle, String boardwriter, String boardcontents, String boardtime, int boardviewcount, String boardtype){
 		super();
-		this.boardseq = boardseq;
+		this.seq = seq;
 		this.boardtitle = boardtitle;
 		this.boardwriter = boardwriter;
 		this.boardcontents = boardcontents;
@@ -22,17 +22,17 @@ public class OBoardVO {
 		this.boardviewcount = boardviewcount;
 		this.boardtype=boardtype;
 	}
-	public int getBoardseq() {
-		return boardseq;
+	public int getSeq() {
+		return seq;
+	}
+	public void setSeq(int seq) {
+		this.seq = seq;
 	}
 	public String getBoardtype() {
 		return boardtype;
 	}
 	public void setBoardtype(String boardtype) {
 		this.boardtype = boardtype;
-	}
-	public void setBoardseq(int boardseq) {
-		this.boardseq = boardseq;
 	}
 	public String getBoardtitle() {
 		return boardtitle;

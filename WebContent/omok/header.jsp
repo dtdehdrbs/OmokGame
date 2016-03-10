@@ -25,9 +25,9 @@
 				<c:if test="${!empty sessionID }">
 					<li class="current_page_item1"><a href="begin.omok">홈페이지</a></li>
 					<li><a href="mypage.omok">마이페이지</a></li>				
-					<li><a href="BoardServlet?menu=notice">공지사항</a></li>
-					<li><a href="BoardServlet?menu=free">자유게시판</a></li>
-					<li><a href="BoardServlet?menu=qna">Q&A</a></li>
+					<li><a href="notice.board">공지사항</a></li>
+					<li><a href="free.board">자유게시판</a></li>
+					<li><a href="qna.board">Q&A</a></li>
 					<li><a href="PlayServlet?menu=list">게임시작</a></li>
 					<li><a href="rank.omok">랭킹</a></li>
 					<li><a href="logout.omok">로그아웃</a></li>				

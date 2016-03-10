@@ -9,10 +9,9 @@
 <body>
 <h1>답글쓰기</h1>
 <h2>
-<form class="contact_form" action="BoardServlet">
-<input type="hidden" name="menu" value="replysuccess"/>
+<form class="contact_form" action="reply.board" method="post">
 <input type="hidden" name="replytype" value="${boardtype}"/>
-<input type="hidden" name="replyseq" value="${boardseq}"/>
+<input type="hidden" name="replyseq" value="${seq}"/>
 제목  :<input name="replytitle" type=text><br>
 작성자:${sessionID}<br>
 <textarea name="replycontents" rows=10 cols=50 placeholder="여기에 내용을 입력하세요"></textarea><br>

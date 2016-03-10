@@ -60,7 +60,7 @@
 				<h2 class="title"><a href="BoardServlet?menu=free">자유게시판</a></h2>
 				<div class="list-style2">
 						<c:forEach var="vo" items="${free}" begin="0" end="4" step="1" >
-						<p>제목 : <a href="BoardServlet?menu=detail&seq=${vo.boardseq}&boardtype=${vo.boardtype}">${vo.boardtitle}</a>
+						<p>제목 : <a href="BoardServlet?menu=detail&seq=${vo.seq}&boardtype=${vo.boardtype}">${vo.boardtitle}</a>
 						작성자 : ${vo.boardwriter}<br></p>
 						</c:forEach>
 				</div>
@@ -73,7 +73,7 @@
 				<h2><a href="BoardServlet?menu=notice">공지사항</a></h2>
 				<ul class="list-style2">
 						<c:forEach var="vo" items="${notice}" begin="0" end="4" step="1" >
-						<li>제목 : <a href="BoardServlet?menu=detail&seq=${vo.boardseq}&boardtype=${vo.boardtype}">${vo.boardtitle}</a>
+						<li>제목 : <a href="BoardServlet?menu=detail&seq=${vo.seq}&boardtype=${vo.boardtype}">${vo.boardtitle}</a>
 						작성자 : ${vo.boardwriter}<br></li>
 						</c:forEach>
 				</ul>

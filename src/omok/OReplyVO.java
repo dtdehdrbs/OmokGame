@@ -4,70 +4,83 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class OReplyVO {
-	private int seq;
-	private String title;
-	private String contents;
-	private String writer;
-	private int viewcount;
-	private String time;
-	private String type;
+	private int replyseq;
+	private String replytitle;
+	private String replycontents;
+	private String replywriter;
+	private int replyviewcount;
+	private String replytime;
+	private String replytype;
 	
-	public OReplyVO() {
-		super();
-	}
-	
-	public OReplyVO(int seq, String title, String contents, String writer, int viewcount, String time, String type) {
-		super();
-		this.seq = seq;
-		this.title = title;
-		this.contents = contents;
-		this.writer = writer;
-		this.viewcount = viewcount;
-		this.time = time;
-		this.type = type;
+	public OReplyVO(int replyseq, String replytitle, String replycontents, String replywriter, int replyviewcount,
+			String replytime, String replytype) {
+		this.replyseq = replyseq;
+		this.replytitle = replytitle;
+		this.replycontents = replycontents;
+		this.replywriter = replywriter;
+		this.replyviewcount = replyviewcount;
+		this.replytime = replytime;
+		this.replytype = replytype;
 	}
 
-	public String getType() {
-		return type;
+	public int getReplyseq() {
+		return replyseq;
 	}
-	public void setType(String type) {
-		this.type = type;
+
+	public void setReplyseq(int replyseq) {
+		this.replyseq = replyseq;
 	}
-	public int getSeq() {
-		return seq;
+
+	public String getReplytitle() {
+		return replytitle;
 	}
-	public void setSeq(int seq) {
-		this.seq = seq;
+
+	public void setReplytitle(String replytitle) {
+		this.replytitle = replytitle;
 	}
-	public String getTitle() {
-		return title;
+
+	public String getReplycontents() {
+		return replycontents;
 	}
-	public void setTitle(String title) {
-		this.title = title;
+
+	public void setReplycontents(String replycontents) {
+		this.replycontents = replycontents;
 	}
-	public String getContents() {
-		return contents;
+
+	public String getReplywriter() {
+		return replywriter;
 	}
-	public void setContents(String contents) {
-		this.contents = contents;
+
+	public void setReplywriter(String replywriter) {
+		this.replywriter = replywriter;
 	}
-	public String getWriter() {
-		return writer;
+
+	public int getReplyviewcount() {
+		return replyviewcount;
 	}
-	public void setWriter(String writer) {
-		this.writer = writer;
+
+	public void setReplyviewcount(int replyviewcount) {
+		this.replyviewcount = replyviewcount;
 	}
-	public int getViewcount() {
-		return viewcount;
+
+	public String getReplytime() {
+		return replytime;
 	}
-	public void setViewcount(int viewcount) {
-		this.viewcount = viewcount;
+
+	public void setReplytime(String replytime) {
+		this.replytime = replytime;
 	}
-	public String getTime() {
-		return time;
+
+	public String getReplytype() {
+		return replytype;
 	}
-	public void setTime(String time) {
-		this.time = time;
+
+	public void setReplytype(String replytype) {
+		this.replytype = replytype;
+	}
+
+	public OReplyVO() {
+		super();
 	}
 	
 }

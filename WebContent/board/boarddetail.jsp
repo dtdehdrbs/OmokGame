@@ -10,20 +10,20 @@
 window.onload = function(){
 	document.getElementById("list").onclick =
 		function(){
-		location.href="BoardServlet?menu=${vo.boardtype}";
+		location.href="${vo.boardtype}.board";
 	}
 	document.getElementById("reply").onclick =
 		function(){
-		location.href = "BoardServlet?menu=reply&seq=${vo.boardseq}&boardtype=${vo.boardtype}";
+		location.href = "reply.board?seq=${vo.seq}&boardtype=${vo.boardtype}";
 	}
 	document.getElementById("update").onclick =
 		function(){
-		location.href = "BoardServlet?menu=update&seq=${vo.boardseq}&boardtype=${vo.boardtype}";
+		location.href = "update.board?seq=${vo.seq}&boardtype=${vo.boardtype}";
 	}
 	document.getElementById("delete").onclick =
 		function(){
 		if(confirm("정말로 삭제하시겠습니까?")){
-			location.href = "BoardServlet?menu=delete&seq=${vo.boardseq}&boardtype=${vo.boardtype}";
+			location.href = "delete.board?seq=${vo.seq}&boardtype=${vo.boardtype}";
 		}
 	}
 }

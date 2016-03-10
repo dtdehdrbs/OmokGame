@@ -127,7 +127,7 @@ public class OBoardDAO {
 				seqPt.setString(1, vo.getBoardtitle());
 				seqPt.setString(2, vo.getBoardcontents());
 				seqPt.setString(3, vo.getBoardtype());
-				seqPt.setInt(4, vo.getBoardseq());
+				seqPt.setInt(4, vo.getSeq());
 				result = seqPt.executeUpdate();
 				}catch(ClassNotFoundException e){
 					System.out.println("드라이버오류");

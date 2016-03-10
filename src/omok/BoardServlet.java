@@ -160,7 +160,7 @@ public class BoardServlet extends HttpServlet {
 			String boardcontents = request.getParameter("boardcontents");
 			String boardtype = request.getParameter("type");
 			vo.setBoardtype(boardtype);
-			vo.setBoardseq(Integer.parseInt(seq));
+			vo.setSeq(Integer.parseInt(seq));
 			vo.setBoardtitle(boardtitle);
 			vo.setBoardcontents(boardcontents);
 			int result=dao.updateBoard(vo);
@@ -174,7 +174,7 @@ public class BoardServlet extends HttpServlet {
 		else if(menu.equals("reply")){
 			String seq= request.getParameter("seq");
 			String boardtype= request.getParameter("boardtype");
-			request.setAttribute("boardseq", seq);
+			request.setAttribute("seq", seq);
 			request.setAttribute("boardtype", boardtype);			
 			request.setAttribute("page", "/board/boardreply.jsp");
 			RequestDispatcher rd = request.getRequestDispatcher("/omok/index.jsp");

@@ -7,10 +7,9 @@
 <title>수정창</title>
 </head>
 <body>
-<form class="contact_form" action="BoardServlet">
-<input type=hidden name="menu" value="updatesuccess"/>
-<input type=hidden name="seq"  value="${vo.boardseq}"  />
-<input type=hidden name="type" value="${vo.boardtype }"/>
+<form class="contact_form" action="update.board" method="post">
+<input type=hidden name="seq"  value="${vo.seq}"  />
+<input type=hidden name="boardtype" value="${vo.boardtype }"/>
 제목  :<input name="boardtitle" type=text value="${vo.boardtitle }"><br>
 작성자:${sessionID }<br>
 <textarea name="boardcontents" rows=10 cols=50>${vo.boardcontents }</textarea><br>
