@@ -42,7 +42,7 @@ $(document).ready(
    		<a href="?menu=${boardtype2}&page=${i}" >${i}</a>
    	</c:forEach>
 	<li>
-      	<c:if test="${(grade=='관리자' and boardtype2=='notice') or boardtype2=='free' or boardtype2=='qna'}"><label></label><label></label><label></label><button class="btn" id="write" type="button">글쓰기</button></c:if>
+      	<c:if test="${(sessionGrade=='관리자' and boardtype2=='notice') or boardtype2=='free' or boardtype2=='qna'}"><label></label><label></label><label></label><button class="btn" id="write" type="button">글쓰기</button></c:if>
     </li>
 </ul>
 </form>
