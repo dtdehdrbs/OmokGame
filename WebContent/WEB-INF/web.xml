@@ -13,18 +13,46 @@
     <servlet-name>omok</servlet-name>
     <url-pattern>*.omok</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>board</servlet-name>
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>board</servlet-name>
+    <url-pattern>*.board</url-pattern>
+  </servlet-mapping>
   
+  
+  <servlet>
+    <description></description>
+    <display-name>OmokServlet</display-name>
+    <servlet-name>OmokServlet</servlet-name>
+    <servlet-class>omok.OmokServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OmokServlet</servlet-name>
+    <url-pattern>/OmokServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BoardServlet</display-name>
+    <servlet-name>BoardServlet</servlet-name>
+    <servlet-class>omok.BoardServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BoardServlet</servlet-name>
+    <url-pattern>/BoardServlet</url-pattern>
+  </servlet-mapping>
   <servlet>
     <description></description>
     <display-name>PlayServlet</display-name>
     <servlet-name>PlayServlet</servlet-name>
-    <servlet-class>play.PlayServlet</servlet-class>
+    <servlet-class>omok.PlayServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>PlayServlet</servlet-name>
     <url-pattern>/PlayServlet</url-pattern>
   </servlet-mapping>
-  
   <servlet-mapping>
     <servlet-name>default</servlet-name>
     <url-pattern>*.css</url-pattern>
